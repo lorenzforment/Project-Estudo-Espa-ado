@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:3000/api';
+// Usa variável de ambiente do Vite ou valor padrão
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
 
 const api = {
   // Listar todos os estudos
