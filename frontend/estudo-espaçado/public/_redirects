@@ -1,0 +1,2 @@
+# Redireciona todas as rotas para index.html (necessário para SPA)
+/*    /index.html   200

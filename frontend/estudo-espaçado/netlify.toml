@@ -1,0 +1,43 @@
+[build]
+  # Comando para build
+  command = "npm run build"
+  # Pasta onde o build será gerado
+  publish = "dist"
+  # Pasta base (se o frontend estiver em subpasta)
+  base = "frontend/estudo-espaçado"
+
+# Configurações do site
+[build.environment]
+  NODE_VERSION = "18"
+
+# Redirecionamentos para SPA (Single Page Application)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers de segurança (opcional)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache de assets estáticos (opcional)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache de imagens (opcional)
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
