@@ -1,0 +1,118 @@
+.estudo-list {
+  margin-top: 2rem;
+}
+
+.estudo-list h2 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.loading, .empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: white;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+}
+
+.estudos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.estudo-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.estudo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.estudo-card.completed {
+  border-left: 4px solid #28a745;
+  opacity: 0.9;
+}
+
+.estudo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.estudo-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.3rem;
+  flex: 1;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.completed-badge {
+  background: #28a745;
+  color: white;
+}
+
+.estudo-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.estudo-meta {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.estudo-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.estudo-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.estudo-actions .btn {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .estudos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .estudo-header {
+    flex-direction: column;
+  }
+
+  .estudo-actions {
+    flex-direction: column;
+  }
+}
